@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        >
+    <include layout="@layout/mybar"/>
+    <LinearLayout
+            android:layout_width="500dp"
+            android:background="#888"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="60dp">
+        <ImageView
+                android:layout_marginLeft="25dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/search"
+                android:layout_width="32dp"
+                android:layout_height="32dp"/>
+        <EditText
+                android:layout_marginLeft="5dp"
+                android:id="@+id/inf"
+                android:layout_width="200dp"
+                android:background="@null"
+                android:layout_gravity="center_vertical"
+                android:hint="请输入公交车线路号"
+                android:maxLines="1"
+                android:maxLength="1"
+                android:textSize="18sp"
+                android:layout_height="40dp"/>
+        <Button
+                android:id="@+id/search"
+                android:background="@drawable/radio"
+                android:layout_width="50dp"
+               android:layout_marginLeft="180dp"
+                android:text="搜索"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:layout_marginRight="200dp"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:text="搜索历史"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <View
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#000"
+            android:layout_width="500dp"
+            android:layout_height="0.5dp"/>
+    <ListView
+            android:id="@+id/listView"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="500dp"
+            android:layout_height="100dp"/>
+
+    <View
+            android:layout_gravity="center_horizontal"
+            android:background="#000"
+            android:layout_width="500dp"
+            android:layout_height="0.5dp"/>
+    <Button
+            android:background="@null"
+            android:id="@+id/clear"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="100dp"
+            android:text="清除搜索历史"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</LinearLayout>

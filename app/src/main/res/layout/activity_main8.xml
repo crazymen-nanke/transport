@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <include layout="@layout/mybar"/>
+    <TextView
+            android:text="向商家付款："
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"
+            android:textSize="45sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#888"
+            android:layout_marginRight="15dp"
+
+    />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:text="付款项目：故宫  付款金额：80元"/>
+
+    <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="300dp"
+            android:src="@drawable/erweima"
+            android:layout_height="300dp"/>
+</LinearLayout>

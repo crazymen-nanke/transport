@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_ETC"
+                android:title="ETC管理"/>
+        <item
+                android:id="@+id/nav_CAR"
+                android:title="车辆违章查询"/>
+        <item
+                android:id="@+id/nav_enviroment"
+                android:title="环境指标"/>
+        <item
+                android:id="@+id/nav_analyse"
+                android:title="路况分析"/>
+        <item
+                android:id="@+id/nav_bus"
+                android:title="公交查询"/>
+        <item
+                android:id="@+id/nav_transport"
+                android:title="实时交通"/>
+        <item
+                android:id="@+id/nav_help"
+                android:title="旅行助手"/>
+    </group>
+
+
+</menu>
