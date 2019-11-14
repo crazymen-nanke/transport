@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.transport.setting.Main4Activity.IP;
+
 public class Main10Activity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
@@ -80,7 +82,7 @@ public class Main10Activity extends AppCompatActivity {
             data = new ArrayList<>();
 
             try {
-                JSONObject object = new JSONObject(post("http://192.168.1.101:8088/transportservice/action/GetBusInfo.do", "{\"Line\":1,\"UserName\":\"user1\"}"));
+                JSONObject object = new JSONObject(post("http://"+IP+":8088/transportservice/action/GetBusInfo.do", "{\"Line\":1,\"UserName\":\"user1\"}"));
                 JSONArray array = new JSONArray(object.getString("ROWS_DETAIL"));
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject jsonObject = array.getJSONObject(i);

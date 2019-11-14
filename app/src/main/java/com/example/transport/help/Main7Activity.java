@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.transport.setting.Main4Activity.IP;
+
 public class Main7Activity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -79,13 +81,13 @@ public class Main7Activity extends AppCompatActivity implements View.OnClickList
                 @Override
                 public void run() {
                     try {
-                        JSONObject object = new JSONObject(post("http://192.168.1.101:8088/transportservice/action/GetSpotInfo.do", "{\"UserName\":\"user1\"}"));
+                        JSONObject object = new JSONObject(post("http://"+IP+":8088/transportservice/action/GetSpotInfo.do", "{\"UserName\":\"user1\"}"));
                         JSONArray array = new JSONArray(object.getString("ROWS_DETAIL"));
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject object1 = array.getJSONObject(i);
                             data.put("name", object1.getString("name"));
                             data.put("ticket", object1.getString("ticket"));
-                            data.put("img", "http://192.168.1.101:8088/transportservice" + object1.getString("img"));
+                            data.put("img", "http://"+IP+":8088/transportservice" + object1.getString("img"));
                         }
 
                         Log.d("TAG", "run: " + data.toString());

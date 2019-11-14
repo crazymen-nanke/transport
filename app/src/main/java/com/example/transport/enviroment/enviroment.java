@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.transport.setting.Main4Activity.IP;
+
 public class enviroment extends AppCompatActivity {
 
 
@@ -161,7 +163,7 @@ public class enviroment extends AppCompatActivity {
 
             RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), "{\"UserName\":\"user1\"}");
             Request request = new Request.Builder()
-                    .url("http://192.168.1.101:8088/transportservice/action/GetAllSense.do")//请求的url
+                    .url("http://"+IP+":8088/transportservice/action/GetAllSense.do")//请求的url
                     .post(requestBody)
                     .build();
 
@@ -187,7 +189,7 @@ public class enviroment extends AppCompatActivity {
 
             RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), "{\"RoadId\":1,\"UserName\":\"user1\"}");
             Request request = new Request.Builder()
-                    .url("http://192.168.1.101:8088/transportservice/action/GetRoadStatus.do")//请求的url
+                    .url("http://"+IP+":8088/transportservice/action/GetRoadStatus.do")//请求的url
                     .post(requestBody)
                     .build();
 

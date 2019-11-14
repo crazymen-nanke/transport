@@ -21,10 +21,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.transport.setting.Main4Activity.IP;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Fragment1 extends Fragment {
 
 
@@ -62,13 +60,13 @@ public class Fragment1 extends Fragment {
         @Override
         protected Map<String, Object> doInBackground(Void... voids) {
             try {
-                JSONObject object = new JSONObject(post("http://192.168.1.101:8088/transportservice/action/GetBusStationInfo.do", "{\"BusStationId\":1,\"UserName\":\"user1\"}"));
+                JSONObject object = new JSONObject(post("http://"+IP+":8088/transportservice/action/GetBusStationInfo.do", "{\"BusStationId\":1,\"UserName\":\"user1\"}"));
                 JSONArray array = new JSONArray(object.getString("ROWS_DETAIL"));
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject object1 = array.getJSONObject(i);
                     data.put("Distance" + (i + 1), object1.getString("Distance"));
                 }
-                JSONObject object1 = new JSONObject(post("http://192.168.1.101:8088/transportservice/action/GetAllSense.do", "{\"UserName\":\"user1\"}"));
+                JSONObject object1 = new JSONObject(post("http://"+IP+":8088/transportservice/action/GetAllSense.do", "{\"UserName\":\"user1\"}"));
                 data.put("pm2.5", object1.getString("pm2.5"));
                 data.put("temperature", object1.getString("temperature"));
                 data.put("humidity", object1.getString("humidity"));

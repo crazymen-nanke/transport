@@ -11,6 +11,7 @@ import com.example.transport.car.car;
 import com.example.transport.enviroment.enviroment;
 import com.example.transport.etc.Main3Activity;
 import com.example.transport.help.Main7Activity;
+import com.example.transport.setting.Main4Activity;
 import com.example.transport.transport.Main9Activity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -74,8 +75,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_ETC) {
-            Intent intent = new Intent(MainActivity.this, Main3Activity.class);
-            startActivity(intent);
+            Intent nav_ETC = new Intent(MainActivity.this, Main3Activity.class);
+            startActivity(nav_ETC);
         } else if (id == R.id.nav_CAR) {
             Intent nav_CAR = new Intent(MainActivity.this, car.class);
             startActivity(nav_CAR);
@@ -93,8 +94,12 @@ public class MainActivity extends AppCompatActivity
             Intent nav_transport = new Intent(MainActivity.this, Main9Activity.class);
             startActivity(nav_transport);
         } else if (id == R.id.nav_help) {
-            Intent nav_help = new Intent(MainActivity.this, Main7Activity.class);
-            startActivity(nav_help);
+                Intent nav_help = new Intent(MainActivity.this, Main7Activity.class);
+                startActivity(nav_help);
+
+        } else if (id == R.id.setting) {
+            Intent setting = new Intent(MainActivity.this, Main4Activity.class);
+            startActivity(setting);
 
         }
 

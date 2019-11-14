@@ -32,6 +32,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.zip.Inflater;
 
+import static com.example.transport.setting.Main4Activity.IP;
+
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView recyclerView;
@@ -77,7 +79,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         protected List<List<Map<String, Object>>> doInBackground(Void... voids) {
 
             try {
-                JSONObject object = new JSONObject(post("http://192.168.1.101:8088/transportservice/action/GetCarPeccancy.do", "{\"UserName\":\"user1\",\"carnumber\":\"" + carnumber + "\"}"));
+                JSONObject object = new JSONObject(post("http://"+IP+":8088/transportservice/action/GetCarPeccancy.do", "{\"UserName\":\"user1\",\"carnumber\":\"" + carnumber + "\"}"));
                 JSONArray array = object.getJSONArray("ROWS_DETAIL");
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject object1 = array.getJSONObject(i);
@@ -95,7 +97,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             }
 
             try {
-                JSONObject object = new JSONObject(post("http://192.168.1.101:8088/transportservice/action/GetPeccancyType.do", "{\"UserName\":\"user1\"}"));
+                JSONObject object = new JSONObject(post("http://"+IP+":8088/transportservice/action/GetPeccancyType.do", "{\"UserName\":\"user1\"}"));
                 JSONArray array = object.getJSONArray("ROWS_DETAIL");
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject object1 = array.getJSONObject(i);

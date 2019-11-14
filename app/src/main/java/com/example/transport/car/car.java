@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.transport.setting.Main4Activity.IP;
+
 public class car extends AppCompatActivity implements View.OnClickListener {
 
     private EditText query;
@@ -48,6 +50,7 @@ public class car extends AppCompatActivity implements View.OnClickListener {
         btn = findViewById(R.id.btn);
         btn.setOnClickListener(this);
         back = findViewById(R.id.back_button);
+        back.setOnClickListener(this);
         TextView title = findViewById(R.id.title_text);
         title.setText("车辆违章");
     }
@@ -81,7 +84,7 @@ public class car extends AppCompatActivity implements View.OnClickListener {
         protected Boolean doInBackground(String... strings) {
             try {
 
-                JSONObject object = new JSONObject(post("http://192.168.1.101:8088/transportservice/action/GetAllCarPeccancy.do", "{\"UserName\":\"user1\"}"));
+                JSONObject object = new JSONObject(post("http://"+IP+":8088/transportservice/action/GetAllCarPeccancy.do", "{\"UserName\":\"user1\"}"));
                 JSONArray array = new JSONArray(object.getString("ROWS_DETAIL"));
                 for (int i = 0; i < array.length(); i++) {
                     Map<String, Object> map = new HashMap<>();
