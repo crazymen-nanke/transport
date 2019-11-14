@@ -11,6 +11,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".car.Main2Activity">
+        </activity>
         <activity android:name=".car.car">
         </activity>
         <activity android:name=".enviroment.enviroment">

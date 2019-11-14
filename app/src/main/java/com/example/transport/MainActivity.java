@@ -1,7 +1,11 @@
 package com.example.transport;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.TextView;
 import com.example.transport.bus.FragmentTabHostActivity;
 import com.example.transport.car.car;
 import com.example.transport.enviroment.enviroment;
@@ -27,6 +31,16 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        TextView textView=new TextView(this);
+        textView.setText("主界面");
+        textView.setTextSize(18);
+        textView.setTextColor(Color.parseColor("#FFFFFF"));
+        textView.setGravity(Gravity.CENTER);
+        Toolbar.LayoutParams layoutParams=new Toolbar.LayoutParams(Toolbar.LayoutParams.WRAP_CONTENT,Toolbar.LayoutParams.WRAP_CONTENT);
+        layoutParams.gravity=Gravity.CENTER;
+        textView.setLayoutParams(layoutParams);
+        toolbar.addView(textView);
         setSupportActionBar(toolbar);
 
 
@@ -35,6 +49,7 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
