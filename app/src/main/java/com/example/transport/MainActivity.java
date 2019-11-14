@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.transport.bus.FragmentTabHostActivity;
 import com.example.transport.car.car;
 import com.example.transport.enviroment.enviroment;
+import com.example.transport.etc.Main3Activity;
 import com.example.transport.help.Main7Activity;
 import com.example.transport.transport.Main9Activity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -73,7 +74,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_ETC) {
-            // Handle the camera action
+            Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_CAR) {
             Intent nav_CAR = new Intent(MainActivity.this, car.class);
             startActivity(nav_CAR);
