@@ -27,6 +27,7 @@ public class enviroment extends AppCompatActivity {
 
 
     private SQLiteDatabase writableDatabase;
+    private MyDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +46,13 @@ public class enviroment extends AppCompatActivity {
             }
         });
 
-        MyDatabase database = new MyDatabase(this, "MyDatabase.db", null, 1);
-        new MyTime(60000, 3000).start();
-        writableDatabase = database.getWritableDatabase();
+        if (database==null){
+            database = new MyDatabase(this, "MyDatabase.db", null, 1);
+        }
 
+        writableDatabase = database.getWritableDatabase();
+        writableDatabase.delete("data",null,null);
+        new MyTime(60000, 3000).start();
     }
 
 
@@ -79,7 +83,6 @@ public class enviroment extends AppCompatActivity {
             contentValues.put("co2", (String) map.get("co2"));
             contentValues.put("pm", (String) map.get("pm2.5"));
             contentValues.put("Status", (String) map.get("Status"));
-
             writableDatabase.insert("data", null, contentValues);
 
 
