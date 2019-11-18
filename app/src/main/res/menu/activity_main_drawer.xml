@@ -6,28 +6,36 @@
     <group android:checkableBehavior="single">
         <item
                 android:id="@+id/nav_ETC"
-                android:title="ETC管理"/>
+                android:title="ETC管理"
+                android:icon="@drawable/etczhangdan"/>
         <item
                 android:id="@+id/nav_CAR"
-                android:title="车辆违章查询"/>
+                android:title="车辆违章查询"
+                android:icon="@drawable/car"/>
         <item
                 android:id="@+id/nav_enviroment"
-                android:title="环境指标"/>
+                android:title="环境指标"
+                android:icon="@drawable/enviroment"/>
         <item
                 android:id="@+id/nav_analyse"
-                android:title="路况分析"/>
+                android:title="路况分析"
+        android:icon="@drawable/road"/>
         <item
                 android:id="@+id/nav_bus"
-                android:title="公交查询"/>
+                android:title="公交查询"
+        android:icon="@drawable/bus"/>
         <item
                 android:id="@+id/nav_transport"
-                android:title="实时交通"/>
+                android:title="实时交通"
+        android:icon="@drawable/carr_manger"/>
         <item
                 android:id="@+id/nav_help"
-                android:title="旅行助手"/>
+                android:title="旅行助手"
+        android:icon="@drawable/trip"/>
         <item
                 android:id="@+id/setting"
-                android:title="设置"/>
+                android:title="设置"
+        android:icon="@drawable/set"/>
     </group>
 
 </menu>
