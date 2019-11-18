@@ -21,6 +21,11 @@ public class MyDatabase extends SQLiteOpenHelper {
                 "co2 text," +
                 "pm text," +
                 "Status text)");
+        db.execSQL("create table etc(" +
+                "id Integer primary key autoIncrement," +
+                "car_number Integer," +
+                "car_money Integer," +
+                "car_time text)");
     }
 
     @Override

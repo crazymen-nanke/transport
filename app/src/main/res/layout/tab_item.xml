@@ -19,7 +19,7 @@
               />
 
         <TextView
-                android:id="@+id/id"
+                android:id="@+id/car_number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -35,7 +35,7 @@
             />
 
         <TextView
-                android:id="@+id/money"
+                android:id="@+id/car_money"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -51,7 +51,7 @@
              />
 
         <TextView
-                android:id="@+id/time"
+                android:id="@+id/car_time"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

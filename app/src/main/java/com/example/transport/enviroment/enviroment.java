@@ -27,7 +27,7 @@ public class enviroment extends AppCompatActivity {
 
 
     private SQLiteDatabase writableDatabase;
-    private MyDatabase database;
+    public static MyDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +46,12 @@ public class enviroment extends AppCompatActivity {
             }
         });
 
-        if (database==null){
+        if (database == null) {
             database = new MyDatabase(this, "MyDatabase.db", null, 1);
         }
 
         writableDatabase = database.getWritableDatabase();
-        writableDatabase.delete("data",null,null);
+        writableDatabase.delete("data", null, null);
         new MyTime(60000, 3000).start();
     }
 
@@ -84,8 +84,6 @@ public class enviroment extends AppCompatActivity {
             contentValues.put("pm", (String) map.get("pm2.5"));
             contentValues.put("Status", (String) map.get("Status"));
             writableDatabase.insert("data", null, contentValues);
-
-
             super.onPostExecute(map);
 
             TextView temperature = findViewById(R.id.data_temperature);
@@ -166,7 +164,7 @@ public class enviroment extends AppCompatActivity {
 
             RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), "{\"UserName\":\"user1\"}");
             Request request = new Request.Builder()
-                    .url("http://"+IP+":8088/transportservice/action/GetAllSense.do")//请求的url
+                    .url("http://" + IP + ":8088/transportservice/action/GetAllSense.do")//请求的url
                     .post(requestBody)
                     .build();
 
@@ -192,7 +190,7 @@ public class enviroment extends AppCompatActivity {
 
             RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), "{\"RoadId\":1,\"UserName\":\"user1\"}");
             Request request = new Request.Builder()
-                    .url("http://"+IP+":8088/transportservice/action/GetRoadStatus.do")//请求的url
+                    .url("http://" + IP + ":8088/transportservice/action/GetRoadStatus.do")//请求的url
                     .post(requestBody)
                     .build();
 

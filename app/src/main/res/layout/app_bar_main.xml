@@ -18,7 +18,7 @@
                 android:gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#6666FF"
+                android:background="@drawable/bg_title"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     </com.google.android.material.appbar.AppBarLayout>

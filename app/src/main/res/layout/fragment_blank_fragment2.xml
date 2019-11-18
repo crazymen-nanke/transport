@@ -14,7 +14,8 @@
                 android:id="@+id/total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:padding="40dp"
+                android:textColor="#000"
                 android:text="充值总金额：0元"/>
     </RelativeLayout>
 
@@ -86,15 +87,15 @@
             android:background="#888"
          />
 
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
 
         <LinearLayout
                 android:id="@+id/wr_areas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
+            <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
         </LinearLayout>
-    </ScrollView>
 </LinearLayout>
