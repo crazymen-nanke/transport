@@ -10,7 +10,7 @@
                 android:icon="@drawable/etczhangdan"/>
         <item
                 android:id="@+id/nav_CAR"
-                android:title="车辆违章查询"
+                android:title="车辆违章"
                 android:icon="@drawable/car"/>
         <item
                 android:id="@+id/nav_enviroment"
